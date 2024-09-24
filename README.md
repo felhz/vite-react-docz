@@ -1,3 +1,5 @@
+# vite-react-docz
+
 # vite-pages library starter
 
 This is a demo project for [vite-plugin-react-pages](https://github.com/vitejs/vite-plugin-react-pages).
@@ -27,4 +29,3 @@ Edit `src/Button/demos/demo1.tsx` or other demo files, the demos will inflect yo
 ---
 
 Checkout [vite-plugin-react-pages](https://github.com/vitejs/vite-plugin-react-pages) for more info.
-# vite-react-docz
