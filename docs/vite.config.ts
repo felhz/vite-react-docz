@@ -4,9 +4,7 @@ import { defineConfig } from 'vite';
 import pages, { DefaultPageStrategy } from 'vite-plugin-react-pages';
 const isDev = process.env.NODE_ENV === 'development';
 export default defineConfig({
-  base: isDev
-    ? '/vite-react-docz/dist/'
-    : 'https://felhz.github.io/vite-react-docz/',
+  base: isDev ? '' : 'https://felhz.github.io/vite-react-docz/',
   build: {
     outDir: path.join(__dirname, '../'),
   },
