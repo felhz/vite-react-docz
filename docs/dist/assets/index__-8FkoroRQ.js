@@ -1,4 +1,4 @@
-import{p as c}from"./_-FU1-d8Ot.js";import{u as o,j as e}from"./index-CcGPvMAj.js";function r(t){const n={a:"a",blockquote:"blockquote",code:"code",h1:"h1",h2:"h2",hr:"hr",p:"p",strong:"strong",...o(),...t.components};return e.jsxs(e.Fragment,{children:[e.jsx(n.h1,{id:"vite-react-docz",children:"vite-react-docz"}),`
+import{p as c}from"./_-FU1-d8Ot.js";import{u as o,j as e}from"./index-B9vy-AFg.js";function r(t){const n={a:"a",blockquote:"blockquote",code:"code",h1:"h1",h2:"h2",hr:"hr",p:"p",strong:"strong",...o(),...t.components};return e.jsxs(e.Fragment,{children:[e.jsx(n.h1,{id:"vite-react-docz",children:"vite-react-docz"}),`
 `,e.jsx(n.h1,{id:"vite-pages-library-starter",children:"vite-pages library starter"}),`
 `,e.jsxs(n.p,{children:["This is a demo project for ",e.jsx(n.a,{href:"https://github.com/vitejs/vite-plugin-react-pages",children:"vite-plugin-react-pages"}),`.
 This project demonstrate how to develop a library using vite as your local develop environment.`]}),`

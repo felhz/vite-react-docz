@@ -1,9 +1,9 @@
 // this is the build config for this demo library source, not the playground
 // the build config for the library playground (document) is located at docs/vite.config.ts
 
-import { resolve } from 'path'
-import { defineConfig } from 'vite'
-import typescript from '@rollup/plugin-typescript'
+import typescript from '@rollup/plugin-typescript';
+import { resolve } from 'path';
+import { defineConfig } from 'vite';
 
 export default defineConfig({
   build: {
@@ -39,4 +39,4 @@ export default defineConfig({
       rootDir: resolve(__dirname, 'src'),
     }),
   ],
-})
+});

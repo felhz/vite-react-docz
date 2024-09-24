@@ -1,4 +1,4 @@
-import{j as e,u as l}from"./index-CcGPvMAj.js";import{p as d}from"./README-CmixbLha.js";const c=`import type { MyImportedTypeAlias } from './typesUtils'
+import{j as e,u as l}from"./index-B9vy-AFg.js";import{p as d}from"./README-CmixbLha.js";const c=`import type { MyImportedTypeAlias } from './typesUtils'
 export type { ReExportedInterface } from './typesUtils'
 export type MyExportedTypeAlias = { a: number }
 type MyTypeAlias = { a: number }

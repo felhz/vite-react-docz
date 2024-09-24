@@ -1,16 +1,20 @@
-import { defineConfig } from 'vite'
-import * as path from 'path'
-import react from '@vitejs/plugin-react' // you can also use @vitejs/plugin-react-swc
-import pages, { DefaultPageStrategy } from 'vite-plugin-react-pages'
-
+import react from '@vitejs/plugin-react'; // you can also use @vitejs/plugin-react-swc
+import * as path from 'path';
+import { defineConfig } from 'vite';
+import pages, { DefaultPageStrategy } from 'vite-plugin-react-pages';
+const isDev = process.env.NODE_ENV === 'development';
 export default defineConfig({
+  base: isDev
+    ? '/vite-react-docz/dist/'
+    : 'https://felhz.github.io/vite-react-docz/dist/',
+
   plugins: [
     react(),
     pages({
       pagesDir: path.join(__dirname, 'pages'),
       pageStrategy: new DefaultPageStrategy({
         extraFindPages: async (pagesDir, helpers) => {
-          const srcPath = path.join(__dirname, '../src')
+          const srcPath = path.join(__dirname, '../src');
           if (String(process.env.SHOW_ALL_COMPONENT_DEMOS) === 'true') {
             // show all component demos during dev
             // put them in page `/components/demos/${componentName}`
@@ -18,13 +22,13 @@ export default defineConfig({
               srcPath,
               '*/demos/**/*.{[tj]sx,md?(x)}',
               async function fileHandler(file, api) {
-                const { relative, path: demoFilePath } = file
+                const { relative, path: demoFilePath } = file;
                 const match = relative.match(
                   /(.*)\/demos\/(.*)\.([tj]sx|mdx?)$/
-                )
-                if (!match) throw new Error('unexpected file: ' + demoFilePath)
-                const [_, componentName, demoName] = match
-                const pageId = `/components/demos/${componentName}`
+                );
+                if (!match) throw new Error('unexpected file: ' + demoFilePath);
+                const [_, componentName, demoName] = match;
+                const pageId = `/components/demos/${componentName}`;
                 // register page data
                 api.addPageData({
                   pageId,
@@ -35,9 +39,9 @@ export default defineConfig({
                   dataPath: `${demoFilePath}?demo`,
                   // register demo static data
                   staticData: await helpers.extractStaticData(file),
-                })
+                });
               }
-            )
+            );
           }
 
           // find all component README
@@ -45,12 +49,12 @@ export default defineConfig({
             srcPath,
             '*/README.md?(x)',
             async function fileHandler(file, api) {
-              const { relative, path: markdownFilePath } = file
-              const match = relative.match(/(.*)\/README\.mdx?$/)
+              const { relative, path: markdownFilePath } = file;
+              const match = relative.match(/(.*)\/README\.mdx?$/);
               if (!match)
-                throw new Error('unexpected file: ' + markdownFilePath)
-              const [_, componentName] = match
-              const pageId = `/components/${componentName}`
+                throw new Error('unexpected file: ' + markdownFilePath);
+              const [_, componentName] = match;
+              const pageId = `/components/${componentName}`;
               // register page data
               api.addPageData({
                 pageId,
@@ -58,7 +62,7 @@ export default defineConfig({
                 dataPath: markdownFilePath,
                 // register static data
                 staticData: await helpers.extractStaticData(file),
-              })
+              });
               // register outlineInfo data
               // it will be consumed by theme-doc
               api.addPageData({
@@ -66,9 +70,9 @@ export default defineConfig({
                 key: 'outlineInfo',
                 // the ?outlineInfo query will extract title info from the markdown file and return the data as a js module
                 dataPath: `${markdownFilePath}?outlineInfo`,
-              })
+              });
             }
-          )
+          );
         },
       }),
     }),
@@ -78,4 +82,4 @@ export default defineConfig({
       'my-lib': path.join(__dirname, '../src'),
     },
   },
-})
+});
