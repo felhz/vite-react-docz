@@ -7,7 +7,9 @@ export default defineConfig({
   base: isDev
     ? '/vite-react-docz/dist/'
     : 'https://felhz.github.io/vite-react-docz/dist/',
-
+  build: {
+    outDir: path.join(__dirname, '../doc'),
+  },
   plugins: [
     react(),
     pages({
