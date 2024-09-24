@@ -3,6 +3,7 @@ import * as path from 'path';
 import { defineConfig } from 'vite';
 import pages, { DefaultPageStrategy } from 'vite-plugin-react-pages';
 const isDev = process.env.NODE_ENV === 'development';
+const routerPath = isDev ? '' : '/vite-react-docz';
 export default defineConfig({
   base: isDev ? '' : 'https://felhz.github.io/vite-react-docz/',
   build: {
@@ -28,7 +29,7 @@ export default defineConfig({
                 );
                 if (!match) throw new Error('unexpected file: ' + demoFilePath);
                 const [_, componentName, demoName] = match;
-                const pageId = `/components/demos/${componentName}`;
+                const pageId = `${routerPath}/components/demos/${componentName}`;
                 // register page data
                 api.addPageData({
                   pageId,
@@ -54,7 +55,7 @@ export default defineConfig({
               if (!match)
                 throw new Error('unexpected file: ' + markdownFilePath);
               const [_, componentName] = match;
-              const pageId = `/components/${componentName}`;
+              const pageId = `${routerPath}/components/${componentName}`;
               // register page data
               api.addPageData({
                 pageId,

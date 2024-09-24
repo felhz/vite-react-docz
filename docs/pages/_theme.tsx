@@ -1,7 +1,7 @@
-import React from 'react'
-import { createTheme, defaultSideNavs } from 'vite-pages-theme-doc'
+import React from 'react';
+import { createTheme, defaultSideNavs } from 'vite-pages-theme-doc';
 
-import Component404 from './404'
+import Component404 from './404';
 
 export default createTheme({
   logo: <div style={{ fontSize: '20px' }}>📘 Vite Pages</div>,
@@ -19,11 +19,6 @@ export default createTheme({
       label: 'Components',
       path: '/components/Button',
       activeIfMatch: '/components',
-    },
-    { label: 'Vite', href: 'https://github.com/vitejs/vite' },
-    {
-      label: 'Vite Pages',
-      href: 'https://github.com/vitejs/vite-plugin-react-pages',
     },
   ],
   sideNavs: (ctx) => {
@@ -44,7 +39,7 @@ export default createTheme({
           },
         },
       },
-    })
+    });
   },
   Component404,
-})
+});
