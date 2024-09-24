@@ -1,5 +1,5 @@
 ---
-title: Card title
+title: Card
 subGroup: data-display
 ---
 
